@@ -8,11 +8,11 @@ func _ready():
 	start_button.grab_focus()
 
 func _on_start_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/game.tscn")
+	get_tree().change_scene_to_file("res://scenes/game.tscn")
 
 
 func _on_options_button_pressed() -> void:
-	var options = load("res://Scenes/options_menu.tscn").instantiate()
+	var options = load("res://scenes/options_menu.tscn").instantiate()
 	#options.main_menu = self
 	get_tree().root.add_child(options)
 

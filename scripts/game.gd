@@ -60,7 +60,7 @@ func create_grid() -> void:
 	var tile_count = Globals.grid_height * Globals.grid_width
 	
 	for i in tile_count:
-		var tile = load("res://Scenes/tile_scene.tscn").instantiate()
+		var tile = load("res://scenes/tile_scene.tscn").instantiate()
 		tile.index = i
 		tile.connect("tile_clicked", _on_tile_clicked)
 		grid_container.add_child(tile)
@@ -300,11 +300,11 @@ func close_menu(menu: Control) -> void:
 	blocker.hide()
 
 func _on_exit_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 func _on_victory_again_button_pressed() -> void:
 	close_menu(victory_panel)
 	create_grid()
 
 func _on_victory_quit_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
