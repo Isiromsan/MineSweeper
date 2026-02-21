@@ -1,0 +1,402 @@
+[gd_scene format=3 uid="uid://b3ng4mh1j6220"]
+
+[ext_resource type="Script" uid="uid://fha3lkbud51a" path="res://scripts/game.gd" id="1_yqjtg"]
+[ext_resource type="StyleBox" uid="uid://0sarwiybyjja" path="res://styles/blue_panel_style.tres" id="2_lnu2h"]
+
+[sub_resource type="Gradient" id="Gradient_qxrlw"]
+colors = PackedColorArray(0.034646634, 0.32711768, 0.99999994, 1, 0, 0.53935444, 0.6663637, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_wrm1d"]
+gradient = SubResource("Gradient_qxrlw")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ebmjs"]
+bg_color = Color(0.19723672, 0.420996, 0.66479504, 1)
+border_width_bottom = 3
+border_color = Color(0.0076186024, 0.0076186024, 0.0076186024, 0.3882353)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Main" type="Control" unique_id=1131322700]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yqjtg")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1225654106]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_wrm1d")
+
+[node name="GameContainer" type="PanelContainer" parent="." unique_id=1541217194]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="GameContainer" unique_id=218683013]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameContainer/MarginContainer" unique_id=602830698]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="GameContainer/MarginContainer/VBoxContainer" unique_id=786016808]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GameContainer/MarginContainer/VBoxContainer/MarginContainer" unique_id=449759061]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="GameContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=576770599]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="MinesLabel" type="Label" parent="GameContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/PanelContainer" unique_id=1766332354]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "0000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MenuButton" type="Button" parent="GameContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=1077393878]
+unique_name_in_owner = true
+layout_mode = 2
+text = "GAME_MENU_BUTTON"
+icon_alignment = 1
+
+[node name="PanelContainer2" type="PanelContainer" parent="GameContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=2109379194]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="TimerLabel" type="Label" parent="GameContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/PanelContainer2" unique_id=1558144528]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "0000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MineGrid" type="GridContainer" parent="GameContainer/MarginContainer/VBoxContainer" unique_id=1674095735]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 1
+theme_override_constants/v_separation = 1
+
+[node name="Blocker" type="ColorRect" parent="." unique_id=1978763808]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[node name="PauseMenu" type="PanelContainer" parent="." unique_id=856826032]
+unique_name_in_owner = true
+visible = false
+z_index = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -144.5
+offset_right = 150.0
+offset_bottom = 144.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_ebmjs")
+
+[node name="MarginContainer" type="MarginContainer" parent="PauseMenu" unique_id=2020288111]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/MarginContainer" unique_id=1284514918]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="PauseMenu/MarginContainer/VBoxContainer" unique_id=877538238]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "GAME_PAUSE_MENU_LABEL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/MarginContainer/VBoxContainer" unique_id=438866075]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_constants/separation = 10
+
+[node name="RestartButton" type="Button" parent="PauseMenu/MarginContainer/VBoxContainer/VBoxContainer" unique_id=897252827]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../CloseButton")
+text = "GAME_PAUSE_RESTART_BUTTON"
+
+[node name="ExitButton" type="Button" parent="PauseMenu/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1914749878]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+focus_neighbor_left = NodePath("../CloseButton")
+text = "GENERIC_QUIT_BUTTON"
+
+[node name="CloseButton" type="Button" parent="PauseMenu/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1308782382]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+focus_neighbor_bottom = NodePath("../RestartButton")
+text = "GENERIC_CLOSE_BUTTON"
+
+[node name="ExitPanelContainer" type="PanelContainer" parent="." unique_id=1933736725]
+visible = false
+z_index = 3
+custom_minimum_size = Vector2(450, 125)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -62.5
+offset_right = 225.0
+offset_bottom = 62.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = ExtResource("2_lnu2h")
+
+[node name="MarginContainer" type="MarginContainer" parent="ExitPanelContainer" unique_id=1590858596]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ExitPanelContainer/MarginContainer" unique_id=233032978]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 25
+
+[node name="Label" type="Label" parent="ExitPanelContainer/MarginContainer/VBoxContainer" unique_id=1890955699]
+layout_mode = 2
+size_flags_vertical = 2
+text = "GAME_EXIT_CONFIRMATION_LABEL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ExitPanelContainer/MarginContainer/VBoxContainer" unique_id=1801733509]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme_override_constants/separation = 15
+
+[node name="ExitButton" type="Button" parent="ExitPanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1324353705]
+custom_minimum_size = Vector2(125, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+focus_neighbor_left = NodePath("../BackButton")
+text = "GENERIC_EXIT_BUTTON"
+
+[node name="BackButton" type="Button" parent="ExitPanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1808573759]
+custom_minimum_size = Vector2(125, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+focus_neighbor_right = NodePath("../ExitButton")
+text = "GENERIC_BACK_BUTTON"
+
+[node name="RestartPanelContainer" type="PanelContainer" parent="." unique_id=831426406]
+visible = false
+z_index = 3
+custom_minimum_size = Vector2(450, 125)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -62.5
+offset_right = 225.0
+offset_bottom = 62.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = ExtResource("2_lnu2h")
+
+[node name="MarginContainer" type="MarginContainer" parent="RestartPanelContainer" unique_id=1698736233]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="RestartPanelContainer/MarginContainer" unique_id=584257406]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 25
+
+[node name="Label" type="Label" parent="RestartPanelContainer/MarginContainer/VBoxContainer" unique_id=553692925]
+layout_mode = 2
+size_flags_vertical = 2
+text = "GAME_RESTART_CONFIRMATION_LABEL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="RestartPanelContainer/MarginContainer/VBoxContainer" unique_id=888367089]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme_override_constants/separation = 15
+
+[node name="RestartButton" type="Button" parent="RestartPanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1621447113]
+custom_minimum_size = Vector2(125, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+focus_neighbor_left = NodePath("../RestartBackButton")
+text = "GAME_PAUSE_RESTART_BUTTON"
+
+[node name="RestartBackButton" type="Button" parent="RestartPanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=868423843]
+custom_minimum_size = Vector2(125, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+focus_neighbor_right = NodePath("../RestartButton")
+text = "GENERIC_BACK_BUTTON"
+
+[node name="VictoryPanel" type="PanelContainer" parent="." unique_id=465432895]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -73.5
+offset_right = 150.0
+offset_bottom = 73.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_lnu2h")
+
+[node name="MarginContainer" type="MarginContainer" parent="VictoryPanel" unique_id=2054664901]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VictoryPanel/MarginContainer" unique_id=1258244027]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="VictoryLabel" type="Label" parent="VictoryPanel/MarginContainer/VBoxContainer" unique_id=1993188613]
+layout_mode = 2
+text = "GAME_VICTORY_LABEL"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VictoryPanel/MarginContainer/VBoxContainer" unique_id=787749825]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VictoryPanel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1202807029]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VictoryPanel/MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer" unique_id=1988444279]
+layout_mode = 2
+text = "GAME_VICTORY_TIME_LABEL"
+
+[node name="VictoryTimeLabel" type="Label" parent="VictoryPanel/MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer" unique_id=1520503230]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="BestTimeContainer" type="HBoxContainer" parent="VictoryPanel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1347608995]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VictoryPanel/MarginContainer/VBoxContainer/HBoxContainer/BestTimeContainer" unique_id=436198975]
+layout_mode = 2
+text = "GAME_VICTORY_BEST_TIME_LABEL"
+
+[node name="BestTimeLabel" type="Label" parent="VictoryPanel/MarginContainer/VBoxContainer/HBoxContainer/BestTimeContainer" unique_id=1108177221]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VictoryPanel/MarginContainer/VBoxContainer" unique_id=826343685]
+layout_mode = 2
+
+[node name="VictoryAgainButton" type="Button" parent="VictoryPanel/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1420477946]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+focus_neighbor_left = NodePath("../VictoryQuitButton")
+focus_neighbor_right = NodePath("../VictoryQuitButton")
+focus_next = NodePath("../VictoryQuitButton")
+text = "GAME_VICTORY_PLAY_AGAIN_BUTTON"
+
+[node name="VictoryQuitButton" type="Button" parent="VictoryPanel/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1121797760]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_neighbor_left = NodePath("../VictoryAgainButton")
+focus_neighbor_right = NodePath("../VictoryAgainButton")
+focus_previous = NodePath("../VictoryAgainButton")
+text = "GENERIC_QUIT_BUTTON"
+
+[connection signal="pressed" from="GameContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="PauseMenu/MarginContainer/VBoxContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="PauseMenu/MarginContainer/VBoxContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="PauseMenu/MarginContainer/VBoxContainer/VBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="VictoryPanel/MarginContainer/VBoxContainer/HBoxContainer2/VictoryAgainButton" to="." method="_on_victory_again_button_pressed"]
+[connection signal="pressed" from="VictoryPanel/MarginContainer/VBoxContainer/HBoxContainer2/VictoryQuitButton" to="." method="_on_victory_quit_button_pressed"]

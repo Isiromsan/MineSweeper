@@ -1,0 +1,147 @@
+[gd_scene format=3 uid="uid://clnjjau32xbc5"]
+
+[ext_resource type="Script" uid="uid://lap40umrurvl" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+
+[sub_resource type="Gradient" id="Gradient_28flt"]
+offsets = PackedFloat32Array(0, 0.99333334)
+colors = PackedColorArray(0.32941177, 0.1882353, 1, 1, 0.41960785, 0.42352942, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_48xlc"]
+gradient = SubResource("Gradient_28flt")
+
+[sub_resource type="LabelSettings" id="LabelSettings_hckgo"]
+font_size = 60
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_28flt"]
+bg_color = Color(0.36286342, 0.0022226782, 1, 1)
+border_width_bottom = 3
+border_color = Color(0.0076186024, 0.0076186024, 0.0076186024, 0.3882353)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Menu" type="Control" unique_id=664794012]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l6cm7")
+
+[node name="Background" type="TextureRect" parent="." unique_id=416524931]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_48xlc")
+
+[node name="Label" type="Label" parent="." unique_id=379012337]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -53.0
+offset_top = 64.415
+offset_right = 53.0
+offset_bottom = 87.41501
+grow_horizontal = 2
+text = "MineSweeper"
+label_settings = SubResource("LabelSettings_hckgo")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=79482523]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -50.5
+offset_right = 100.0
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartButton" type="Button" parent="VBoxContainer" unique_id=1679016385 groups=["hide_buttons"]]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_top = NodePath("../QuitButton")
+text = "MAIN_PLAY_BUTTON"
+
+[node name="OptionsButton" type="Button" parent="VBoxContainer" unique_id=1059654073 groups=["hide_buttons"]]
+layout_mode = 2
+text = "MAIN_SETTINGS_BUTTON"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=358825451 groups=["hide_buttons"]]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../StartButton")
+text = "GENERIC_QUIT_BUTTON"
+
+[node name="ExitPanelContainer" type="PanelContainer" parent="." unique_id=2102684950]
+unique_name_in_owner = true
+visible = false
+z_index = 3
+custom_minimum_size = Vector2(325, 125)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_28flt")
+
+[node name="MarginContainer" type="MarginContainer" parent="ExitPanelContainer" unique_id=422490001]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ExitPanelContainer/MarginContainer" unique_id=1348904636]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 25
+
+[node name="Label" type="Label" parent="ExitPanelContainer/MarginContainer/VBoxContainer" unique_id=646675833]
+layout_mode = 2
+size_flags_vertical = 2
+text = "MAIN_CONFIRMATION_LABEL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ExitPanelContainer/MarginContainer/VBoxContainer" unique_id=454748717]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme_override_constants/separation = 15
+
+[node name="ExitButton" type="Button" parent="ExitPanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1129302726]
+custom_minimum_size = Vector2(125, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+focus_neighbor_left = NodePath("../BackButton")
+text = "GENERIC_EXIT_BUTTON"
+
+[node name="BackButton" type="Button" parent="ExitPanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=699256739]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(125, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+focus_neighbor_right = NodePath("../ExitButton")
+text = "GENERIC_BACK_BUTTON"
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="ExitPanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="ExitPanelContainer/MarginContainer/VBoxContainer/HBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

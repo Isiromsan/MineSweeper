@@ -1,0 +1,37 @@
+key,en,es
+MAIN_PLAY_BUTTON,Play,Jugar
+MAIN_SETTINGS_BUTTON,Settings,Opciones
+GENERIC_QUIT_BUTTON,Quit,Salir
+MAIN_CONFIRMATION_LABEL,Are your sure you want to exit?,¿Estás seguro de que deseas salir?
+GENERIC_EXIT_BUTTON,Exit,Salir
+GENERIC_BACK_BUTTON,Back,Atrás
+SETTINGS_TITLE,SETTINGS,OPCIONES
+SETTINGS_DIFFICULTY_LABEL,Difficulty,Dificultad
+SETTINGS_LANGUAGE_LABEL,Language,Idioma
+SETTINGS_BOARD_SETTINGS,Board Settings,Opciones de tablero
+SETTINGS_WIDTH,Width,Anchura
+SETTINGS_HEIGHT,Height,Altura
+SETTINGS_MINES,Mines,Minas
+SETTINGS_BEST_TIME,Best Time:,Mejor tiempo:
+SETTINGS_RESET_BEST_TIME,Reset Best Time,Borrar mejor tiempo
+GENERIC_APPLY_BUTTON,Apply,Aplicar
+SETTINGS_DIFFICULTY_BEGINNER,Beginner,Principiante
+SETTINGS_DIFFICULTY_INTERMEDIATE,Intermediate,Intermedio
+SETTINGS_DIFFICULTY_EXPERT,Expert,Experto
+SETTINGS_DIFFICULTY_CUSTOM,Custom,Personalizado
+SETTINGS_CONFIRMATION_LABEL,Do you wish to exit without applying your changes?,¿Deseas salir sin aplicar los cambios?
+SETTINGS_APPLY_EXIT_BUTTON,Apply and Exit,Aplicar y salir
+SETTINGS_REMOVE_TIME_PANEL,Are you sure you want to remove this best time?,¿Estás seguro de que desas eliminar este mejor tiempo?
+SETTINGS_REMOVE_TIME_SUBPANEL,This cannot be undone,Esto no se puede deshacer
+GENERIC_YES_BUTTON,Yes,Sí
+GENERIC_NO_BUTTON,No,No
+GAME_MENU_BUTTON,Menu,Menú
+GAME_PAUSE_MENU_LABEL,Pause Menu,Menú de pausa
+GAME_PAUSE_RESTART_BUTTON,Restart Game,Reiniciar juego
+GENERIC_CLOSE_BUTTON,Close,Cerrar
+GAME_EXIT_CONFIRMATION_LABEL,Do you want to exit? Your progress won't be saved,
+GAME_RESTART_CONFIRMATION_LABEL,Do you want to restart the game?,¿Deseas reiniciar el juego?
+GAME_VICTORY_LABEL,You Won!,¡Ganaste!
+GAME_VICTORY_TIME_LABEL,Your time:,Tu tiempo:
+GAME_VICTORY_BEST_TIME_LABEL,Best time:,Mejor tiempo:
+GAME_VICTORY_PLAY_AGAIN_BUTTON,Play Again,Jugar de nuevo
